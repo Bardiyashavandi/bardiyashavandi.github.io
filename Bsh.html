@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bardiya Shavandi — CS & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #1a6fff;
+  --blue-dark: #0d4bbf;
+  --blue-faint: #edf2ff;
+  --black: #080808;
+  --white: #ffffff;
+  --off: #fafafa;
+  --text: #0f0f0f;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 58px; padding: 0 clamp(1.5rem, 5vw, 3rem);
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px;
+  letter-spacing: -0.03em; color: var(--black); text-decoration: none;
+}
+.nav-logo em { color: var(--blue); font-style: normal; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; }
+.nav-links a {
+  font-size: 13.5px; color: var(--muted); text-decoration: none;
+  letter-spacing: 0.01em; transition: color 0.12s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ── CONTAINER ── */
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+
+/* ── HERO ── */
+#hero {
+  min-height: calc(100vh - 58px);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem clamp(1.5rem, 5vw, 3rem) 4rem;
+  max-width: 920px; margin: 0 auto;
+}
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 1.75rem;
+}
+.hero-kicker::before {
+  content: ''; display: block; width: 28px; height: 1.5px; background: var(--blue);
+}
+.hero-name {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  line-height: 0.95; letter-spacing: -0.04em;
+  color: var(--black); margin-bottom: 1.75rem;
+}
+.hero-name .accent { color: var(--blue); }
+.hero-sub {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--muted); max-width: 500px;
+  line-height: 1.65; margin-bottom: 2.5rem;
+}
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 5rem; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13.5px; font-weight: 500; padding: 10px 20px;
+  border-radius: 7px; text-decoration: none; transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn-fill { background: var(--blue); color: #fff; }
+.btn-fill:hover { background: var(--blue-dark); }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+.btn-ghost:hover { border-color: var(--blue); background: var(--blue-faint); color: var(--blue); }
+
+.hero-bar {
+  display: grid; grid-template-columns: repeat(3, auto); gap: 0;
+  border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; width: fit-content;
+}
+.hero-stat {
+  padding: 1.25rem 2rem;
+  border-right: 1px solid var(--border);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 1.75rem; letter-spacing: -0.04em; color: var(--black);
+  line-height: 1;
+}
+.hero-stat-num sup { font-size: 0.9rem; color: var(--blue); }
+.hero-stat-label { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* ── SECTION ── */
+.section { padding: 6rem clamp(1.5rem, 5vw, 3rem); max-width: 920px; margin: 0 auto; }
+.eyebrow {
+  font-size: 11.5px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem;
+}
+.section-h {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 2.75rem); letter-spacing: -0.035em;
+  color: var(--black); line-height: 1.05; margin-bottom: 0.75rem;
+}
+.section-lead {
+  font-size: 15px; color: var(--muted);
+  max-width: 480px; margin-bottom: 3rem; line-height: 1.7;
+}
+
+/* ── ABOUT ── */
+.about-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
+.about-body { font-size: 15px; color: var(--muted); line-height: 1.8; }
+.about-body p { margin-bottom: 1.1rem; }
+.about-body strong { color: var(--text); font-weight: 500; }
+.about-body p:last-child { margin-bottom: 0; }
+
+.info-list { display: flex; flex-direction: column; gap: 1px; }
+.info-row {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+}
+.info-row:first-child { border-top: 1px solid var(--border); }
+.info-key { color: var(--muted); white-space: nowrap; }
+.info-val { color: var(--text); font-weight: 500; text-align: right; }
+
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+}
+.pcard {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.4rem; background: var(--white);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.pcard:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-faint);
+}
+.pcard-domain {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 0.85rem;
+}
+.pcard-title {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 15.5px; color: var(--black); line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+.pcard-desc {
+  font-size: 13px; color: var(--muted); line-height: 1.6;
+  flex: 1; margin-bottom: 1.1rem;
+}
+.pcard-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1rem; }
+.pill {
+  font-size: 11px; color: var(--muted);
+  background: var(--off); border: 1px solid var(--border);
+  padding: 2px 9px; border-radius: 20px;
+}
+.pcard-link {
+  font-size: 12.5px; font-weight: 500; color: var(--blue);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 3px;
+  margin-top: auto;
+}
+.pcard-link:hover { text-decoration: underline; }
+
+/* ── SKILLS ── */
+.skills-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.skill-block {
+  background: var(--off); border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+}
+.skill-block-title {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 0.8rem; padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.stag {
+  font-size: 12.5px; font-weight: 500; color: var(--text);
+  background: var(--white); border: 1px solid var(--border);
+  padding: 3px 10px; border-radius: 6px;
+}
+
+/* ── CERTIFICATIONS ── */
+.cert-list { display: flex; flex-direction: column; gap: 10px; margin-top: 2.5rem; }
+.cert-item {
+  display: flex; align-items: center; gap: 14px;
+  border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px;
+  font-size: 14px;
+}
+.cert-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--blue); flex-shrink: 0;
+}
+.cert-name { font-weight: 500; color: var(--text); }
+.cert-meta { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+/* ── CONTACT ── */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact-intro { font-size: 15px; color: var(--muted); line-height: 1.8; }
+.contact-intro strong { color: var(--text); font-weight: 500; }
+.contact-links { display: flex; flex-direction: column; gap: 10px; }
+.clink {
+  display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+  border: 1px solid var(--border); border-radius: 10px;
+  text-decoration: none; color: var(--text);
+  transition: border-color 0.13s, background 0.13s;
+}
+.clink:hover { border-color: var(--blue); background: var(--blue-faint); }
+.clink-icon {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: var(--blue-faint); display: flex; align-items: center;
+  justify-content: center; font-size: 17px; flex-shrink: 0;
+}
+.clink-label { font-size: 14px; font-weight: 500; }
+.clink-value { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem clamp(1.5rem, 5vw, 3rem);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+  font-size: 13px; color: var(--muted);
+}
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .skills-layout { grid-template-columns: 1fr 1fr; }
+  .hero-bar { grid-template-columns: 1fr 1fr; }
+  .hero-bar .hero-stat:nth-child(2) { border-right: none; }
+  .hero-bar .hero-stat:nth-child(3) { border-top: 1px solid var(--border); grid-column: span 2; }
+  .nav-links { gap: 1.25rem; }
+}
+@media (max-width: 440px) {
+  .skills-layout { grid-template-columns: 1fr; }
+  .nav-links li:nth-child(3), .nav-links li:nth-child(4) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">B<em>.</em>Shavandi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <p class="hero-kicker">CS &amp; AI · Istanbul, Turkey</p>
+  <h1 class="hero-name">Bardiya<br><span class="accent">Shavandi</span></h1>
+  <p class="hero-sub">CS &amp; Engineering student at Sabancı University. Focused on machine learning, NLP, and building data-driven systems.</p>
+  <div class="cta-row">
+    <a href="#projects" class="btn btn-fill">View projects →</a>
+    <a href="https://github.com/Bardiyashavandi" target="_blank" class="btn btn-ghost">GitHub</a>
+    <a href="https://www.linkedin.com/in/bardiyashavandi/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+  </div>
+  <div class="hero-bar">
+    <div class="hero-stat">
+      <div class="hero-stat-num">3.68<sup>/4</sup></div>
+      <div class="hero-stat-label">GPA</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">5<sup>×</sup></div>
+      <div class="hero-stat-label">Dean's List</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">6<sup>+</sup></div>
+      <div class="hero-stat-label">Projects shipped</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <p class="eyebrow">Background</p>
+  <h2 class="section-h">About me</h2>
+  <div class="about-layout">
+    <div class="about-body">
+      <p>I'm a third-year <strong>CS &amp; Engineering</strong> student at Sabancı University in Istanbul, with a focus on machine learning, NLP, and data-driven systems. I'm drawn to work that sits close to the research frontier — from statistical modeling and ML pipelines to full-stack data applications.</p>
+      <p>My coursework spans machine learning, algorithms, database systems, software engineering, and linear algebra. Outside the classroom, I build projects that apply these ideas to real problems — sports analytics, economic modeling, and backend systems.</p>
+      <p>I enjoy reading about history and politics, and play basketball and tennis when I'm not in front of a screen.</p>
+    </div>
+    <div class="info-list">
+      <div class="info-row">
+        <span class="info-key">University</span>
+        <span class="info-val">Sabancı University</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Degree</span>
+        <span class="info-val">B.Sc. CS &amp; Engineering</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">GPA</span>
+        <span class="info-val">3.68 / 4.0</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Graduation</span>
+        <span class="info-val">June 2027</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Location</span>
+        <span class="info-val">Istanbul, Turkey</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Internship</span>
+        <span class="info-val">AI Engineer · Paradigm</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Languages</span>
+        <span class="info-val">English · Persian · Turkish</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <p class="eyebrow">Work</p>
+  <h2 class="section-h">Projects</h2>
+  <p class="section-lead">Academic and personal projects across ML, data engineering, and full-stack systems.</p>
+  <div class="projects-grid">
+
+    <div class="pcard">
+      <div class="pcard-domain">ML · Sports Analytics</div>
+      <div class="pcard-title">World Cup 2026 Predictor</div>
+      <p class="pcard-desc">Dixon-Coles + XGBoost + Bayesian updating for scoreline prediction. Includes SHAP explainability, a backtesting framework, and a Streamlit dashboard.</p>
+      <div class="pcard-pills">
+        <span class="pill">Python</span><span class="pill">XGBoost</span><span class="pill">SHAP</span><span class="pill">Streamlit</span>
+      </div>
+      <a href="https://github.com/Bardiyashavandi/World-Cup-2026-Predictor" target="_blank" class="pcard-link">GitHub →</a>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-domain">Data Science · Economics</div>
+      <div class="pcard-title">US Real Estate Analysis</div>
+      <p class="pcard-desc">EDA on macro indicators (inflation, interest rates) driving US housing prices. ML models for trend prediction with hypothesis testing and correlation analysis.</p>
+      <div class="pcard-pills">
+        <span class="pill">Python</span><span class="pill">Scikit-learn</span><span class="pill">Pandas</span><span class="pill">Seaborn</span>
+      </div>
+      <a href="https://github.com/Bardiyashavandi/US-Housing-Price-Analysis" target="_blank" class="pcard-link">GitHub →</a>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-domain">Full-Stack</div>
+      <div class="pcard-title">E-Commerce Platform</div>
+      <p class="pcard-desc">Full-stack platform with Vue.js, Node.js/Express, and MongoDB Atlas. JWT auth, cart, order tracking, search/filtering, and a multi-role admin interface built with Scrum.</p>
+      <div class="pcard-pills">
+        <span class="pill">Vue.js</span><span class="pill">Node.js</span><span class="pill">MongoDB</span><span class="pill">JWT</span>
+      </div>
+      <a href="https://github.com/Theparsaw/Full-Stack-E-Commerce-Web-Application" target="_blank" class="pcard-link">GitHub →</a>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-domain">Databases</div>
+      <div class="pcard-title">Bank Management DB</div>
+      <p class="pcard-desc">Normalized relational banking DB via ER modeling. 15+ SQL queries with relational algebra equivalents, 3 triggers, 3 stored procedures, and a PHP/XAMPP web UI.</p>
+      <div class="pcard-pills">
+        <span class="pill">MySQL</span><span class="pill">MongoDB</span><span class="pill">PHP</span>
+      </div>
+      <a href="https://github.com/Bardiyashavandi/Bank-Management-Database-System" target="_blank" class="pcard-link">GitHub →</a>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-domain">Algorithms</div>
+      <div class="pcard-title">Subset Sum Algorithms</div>
+      <p class="pcard-desc">Brute force (Θ(2ⁿ)) vs FPTAS trimmed-list (O(n²/ε)) analysis. Formally proved complexity; validated across 320 test instances with confidence intervals and log-log regression.</p>
+      <div class="pcard-pills">
+        <span class="pill">Python</span><span class="pill">Jupyter</span>
+      </div>
+      <a href="https://github.com/Bardiyashavandi/Subset-Sum-Algorithms" target="_blank" class="pcard-link">GitHub →</a>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-domain">Hardware · Digital Logic</div>
+      <div class="pcard-title">FPGA Mastermind Game</div>
+      <p class="pcard-desc">Verilog implementation of Mastermind using FSM control logic and datapaths. Debounced button input, SSD outputs, LED indicators. Simulated and deployed on FPGA.</p>
+      <div class="pcard-pills">
+        <span class="pill">Verilog</span><span class="pill">FSM</span><span class="pill">FPGA</span>
+      </div>
+      <a href="https://github.com/Bardiyashavandi/Digital-Logic-Game-Verilog" target="_blank" class="pcard-link">GitHub →</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <p class="eyebrow">Capabilities</p>
+  <h2 class="section-h">Skills</h2>
+  <p class="section-lead">Languages, libraries, and tools I work with regularly.</p>
+  <div class="skills-layout">
+    <div class="skill-block">
+      <div class="skill-block-title">Languages</div>
+      <div class="skill-tags">
+        <span class="stag">Python</span>
+        <span class="stag">C++</span>
+        <span class="stag">JavaScript</span>
+        <span class="stag">SQL</span>
+        <span class="stag">Verilog</span>
+        <span class="stag">PHP</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">ML / AI</div>
+      <div class="skill-tags">
+        <span class="stag">PyTorch</span>
+        <span class="stag">Scikit-learn</span>
+        <span class="stag">XGBoost</span>
+        <span class="stag">NLP</span>
+        <span class="stag">LLMs</span>
+        <span class="stag">RAG</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Data</div>
+      <div class="skill-tags">
+        <span class="stag">NumPy</span>
+        <span class="stag">Pandas</span>
+        <span class="stag">Matplotlib</span>
+        <span class="stag">Seaborn</span>
+        <span class="stag">SHAP</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Web & Databases</div>
+      <div class="skill-tags">
+        <span class="stag">Vue.js</span>
+        <span class="stag">Node.js</span>
+        <span class="stag">MySQL</span>
+        <span class="stag">MongoDB</span>
+        <span class="stag">REST APIs</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Tools</div>
+      <div class="skill-tags">
+        <span class="stag">Git</span>
+        <span class="stag">VS Code</span>
+        <span class="stag">Jira</span>
+        <span class="stag">Streamlit</span>
+        <span class="stag">Jupyter</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-title">Concepts</div>
+      <div class="skill-tags">
+        <span class="stag">Deep Learning</span>
+        <span class="stag">EDA</span>
+        <span class="stag">Statistical Modelling</span>
+        <span class="stag">Agile/Scrum</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-list">
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Artificial Intelligence A-Z 2026: Agentic AI, Gen AI &amp; RL</div>
+        <div class="cert-meta">Udemy · 2025</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Python for Data Science and Machine Learning Bootcamp</div>
+        <div class="cert-meta">Udemy · 2025</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">5-Day AI Agents Intensive</div>
+        <div class="cert-meta">Google · Kaggle · 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <p class="eyebrow">Get in touch</p>
+  <h2 class="section-h">Contact</h2>
+  <div class="contact-layout">
+    <div class="contact-intro">
+      <p>Open to <strong>research collaborations</strong>, <strong>internship opportunities</strong>, and conversations about grad school in AI/ML/NLP.</p>
+      <br>
+      <p>Based in Istanbul. Available for remote roles and open to relocation for the right opportunity.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:bardiya.shavandi@sabanciuniv.edu" class="clink">
+        <div class="clink-icon">✉️</div>
+        <div>
+          <div class="clink-label">Email</div>
+          <div class="clink-value">bardiya.shavandi@sabanciuniv.edu</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/bardiyashavandi/" target="_blank" class="clink">
+        <div class="clink-icon">💼</div>
+        <div>
+          <div class="clink-label">LinkedIn</div>
+          <div class="clink-value">linkedin.com/in/bardiyashavandi</div>
+        </div>
+      </a>
+      <a href="https://github.com/Bardiyashavandi" target="_blank" class="clink">
+        <div class="clink-icon">💻</div>
+        <div>
+          <div class="clink-label">GitHub</div>
+          <div class="clink-value">github.com/Bardiyashavandi</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Bardiya Shavandi</span>
+  <div class="footer-links">
+    <a href="https://github.com/Bardiyashavandi" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/bardiyashavandi/" target="_blank">LinkedIn</a>
+    <a href="mailto:bardiya.shavandi@sabanciuniv.edu">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
