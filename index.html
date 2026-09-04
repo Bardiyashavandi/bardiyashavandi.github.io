@@ -1,6 +1,3 @@
-
-
-Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +9,7 @@ Index · HTML
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
 :root {
   --blue: #1a6fff;
   --blue-dark: #0d4bbf;
@@ -25,9 +22,9 @@ Index · HTML
   --border: #e5e7eb;
   --border-strong: #d1d5db;
 }
- 
+
 html { scroll-behavior: smooth; }
- 
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -36,7 +33,7 @@ body {
   background: var(--white);
   -webkit-font-smoothing: antialiased;
 }
- 
+
 /* ── NAV ── */
 nav {
   position: sticky; top: 0; z-index: 100;
@@ -57,10 +54,10 @@ nav {
   letter-spacing: 0.01em; transition: color 0.12s;
 }
 .nav-links a:hover { color: var(--text); }
- 
+
 /* ── CONTAINER ── */
 .wrap { max-width: 920px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
- 
+
 /* ── HERO ── */
 #hero {
   min-height: calc(100vh - 58px);
@@ -90,7 +87,7 @@ nav {
   line-height: 1.65; margin-bottom: 2.5rem;
 }
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 5rem; }
- 
+
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 13.5px; font-weight: 500; padding: 10px 20px;
@@ -101,7 +98,7 @@ nav {
 .btn-fill:hover { background: var(--blue-dark); }
 .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
 .btn-ghost:hover { border-color: var(--blue); background: var(--blue-faint); color: var(--blue); }
- 
+
 .hero-bar {
   display: grid; grid-template-columns: repeat(3, auto); gap: 0;
   border: 1px solid var(--border); border-radius: 12px;
@@ -119,10 +116,10 @@ nav {
 }
 .hero-stat-num sup { font-size: 0.9rem; color: var(--blue); }
 .hero-stat-label { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
- 
+
 /* ── DIVIDER ── */
 .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
- 
+
 /* ── SECTION ── */
 .section { padding: 6rem clamp(1.5rem, 5vw, 3rem); max-width: 920px; margin: 0 auto; }
 .eyebrow {
@@ -138,14 +135,14 @@ nav {
   font-size: 15px; color: var(--muted);
   max-width: 480px; margin-bottom: 3rem; line-height: 1.7;
 }
- 
+
 /* ── ABOUT ── */
 .about-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
 .about-body { font-size: 15px; color: var(--muted); line-height: 1.8; }
 .about-body p { margin-bottom: 1.1rem; }
 .about-body strong { color: var(--text); font-weight: 500; }
 .about-body p:last-child { margin-bottom: 0; }
- 
+
 .info-list { display: flex; flex-direction: column; gap: 1px; }
 .info-row {
   display: flex; align-items: baseline; justify-content: space-between;
@@ -156,7 +153,7 @@ nav {
 .info-row:first-child { border-top: 1px solid var(--border); }
 .info-key { color: var(--muted); white-space: nowrap; }
 .info-val { color: var(--text); font-weight: 500; text-align: right; }
- 
+
 /* ── PROJECTS ── */
 .projects-grid {
   display: grid;
@@ -199,7 +196,7 @@ nav {
   margin-top: auto;
 }
 .pcard-link:hover { text-decoration: underline; }
- 
+
 /* ── SKILLS ── */
 .skills-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .skill-block {
@@ -218,21 +215,7 @@ nav {
   background: var(--white); border: 1px solid var(--border);
   padding: 3px 10px; border-radius: 6px;
 }
- 
-/* ── CERTIFICATIONS ── */
-.cert-list { display: flex; flex-direction: column; gap: 10px; margin-top: 2.5rem; }
-.cert-item {
-  display: flex; align-items: center; gap: 14px;
-  border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px;
-  font-size: 14px;
-}
-.cert-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--blue); flex-shrink: 0;
-}
-.cert-name { font-weight: 500; color: var(--text); }
-.cert-meta { font-size: 12px; color: var(--muted); margin-top: 1px; }
- 
+
 /* ── CONTACT ── */
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .contact-intro { font-size: 15px; color: var(--muted); line-height: 1.8; }
@@ -252,7 +235,7 @@ nav {
 }
 .clink-label { font-size: 14px; font-weight: 500; }
 .clink-value { font-size: 12px; color: var(--muted); margin-top: 1px; }
- 
+
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
@@ -264,7 +247,7 @@ footer {
 .footer-links { display: flex; gap: 1.5rem; }
 .footer-links a { color: var(--muted); text-decoration: none; }
 .footer-links a:hover { color: var(--text); }
- 
+
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
   .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -281,7 +264,7 @@ footer {
 </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">B<em>.</em>Shavandi</a>
@@ -292,7 +275,7 @@ footer {
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
- 
+
 <!-- HERO -->
 <section id="hero">
   <p class="hero-kicker">CS &amp; AI · Istanbul, Turkey</p>
@@ -318,9 +301,9 @@ footer {
     </div>
   </div>
 </section>
- 
+
 <div class="divider"></div>
- 
+
 <!-- ABOUT -->
 <div class="section" id="about">
   <p class="eyebrow">Background</p>
@@ -363,16 +346,16 @@ footer {
     </div>
   </div>
 </div>
- 
+
 <div class="divider"></div>
- 
+
 <!-- PROJECTS -->
 <div class="section" id="projects">
   <p class="eyebrow">Work</p>
   <h2 class="section-h">Projects</h2>
   <p class="section-lead">Academic and personal projects across ML, data engineering, and full-stack systems.</p>
   <div class="projects-grid">
- 
+
     <div class="pcard">
       <div class="pcard-domain">AI Agents · Social Data</div>
       <div class="pcard-title">X Hype Finder</div>
@@ -382,7 +365,7 @@ footer {
       </div>
       <a href="https://github.com/Bardiyashavandi/x-hype-finder" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
     <div class="pcard">
       <div class="pcard-domain">AI Agents · Security</div>
       <div class="pcard-title">AI Code Review Agent</div>
@@ -392,7 +375,7 @@ footer {
       </div>
       <a href="https://github.com/Bardiyashavandi/code_review_agent" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
     <div class="pcard">
       <div class="pcard-domain">ML · Sports Analytics</div>
       <div class="pcard-title">World Cup 2026 Predictor</div>
@@ -402,7 +385,7 @@ footer {
       </div>
       <a href="https://github.com/Bardiyashavandi/World-Cup-2026-Predictor" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
     <div class="pcard">
       <div class="pcard-domain">Data Science · Economics</div>
       <div class="pcard-title">US Real Estate Analysis</div>
@@ -412,7 +395,7 @@ footer {
       </div>
       <a href="https://github.com/Bardiyashavandi/US-Housing-Price-Analysis" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
     <div class="pcard">
       <div class="pcard-domain">Full-Stack</div>
       <div class="pcard-title">E-Commerce Platform</div>
@@ -422,7 +405,7 @@ footer {
       </div>
       <a href="https://github.com/Theparsaw/Full-Stack-E-Commerce-Web-Application" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
     <div class="pcard">
       <div class="pcard-domain">Databases</div>
       <div class="pcard-title">Bank Management DB</div>
@@ -432,7 +415,7 @@ footer {
       </div>
       <a href="https://github.com/Bardiyashavandi/Bank-Management-Database-System" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
     <div class="pcard">
       <div class="pcard-domain">Algorithms</div>
       <div class="pcard-title">Subset Sum Algorithms</div>
@@ -442,7 +425,7 @@ footer {
       </div>
       <a href="https://github.com/Bardiyashavandi/Subset-Sum-Algorithms" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
     <div class="pcard">
       <div class="pcard-domain">Hardware · Digital Logic</div>
       <div class="pcard-title">FPGA Mastermind Game</div>
@@ -452,12 +435,12 @@ footer {
       </div>
       <a href="https://github.com/Bardiyashavandi/Digital-Logic-Game-Verilog" target="_blank" class="pcard-link">GitHub →</a>
     </div>
- 
+
   </div>
 </div>
- 
+
 <div class="divider"></div>
- 
+
 <!-- SKILLS -->
 <div class="section" id="skills">
   <p class="eyebrow">Capabilities</p>
@@ -526,34 +509,10 @@ footer {
       </div>
     </div>
   </div>
- 
-  <div class="cert-list">
-    <div class="cert-item">
-      <div class="cert-dot"></div>
-      <div>
-        <div class="cert-name">Artificial Intelligence A-Z 2026: Agentic AI, Gen AI &amp; RL</div>
-        <div class="cert-meta">Udemy · 2025</div>
-      </div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-dot"></div>
-      <div>
-        <div class="cert-name">Python for Data Science and Machine Learning Bootcamp</div>
-        <div class="cert-meta">Udemy · 2025</div>
-      </div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-dot"></div>
-      <div>
-        <div class="cert-name">5-Day AI Agents Intensive</div>
-        <div class="cert-meta">Google · Kaggle · 2026</div>
-      </div>
-    </div>
-  </div>
 </div>
- 
+
 <div class="divider"></div>
- 
+
 <!-- CONTACT -->
 <div class="section" id="contact">
   <p class="eyebrow">Get in touch</p>
@@ -589,7 +548,7 @@ footer {
     </div>
   </div>
 </div>
- 
+
 <footer>
   <span>© 2026 Bardiya Shavandi</span>
   <div class="footer-links">
@@ -598,7 +557,6 @@ footer {
     <a href="mailto:bardiya.shavandi@sabanciuniv.edu">Email</a>
   </div>
 </footer>
- 
+
 </body>
 </html>
- 
